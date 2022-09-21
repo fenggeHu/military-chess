@@ -19,6 +19,19 @@ const (
 	//Blue
 )
 
+func (p Player) Name() string {
+	switch p {
+	case Red:
+		return "Red"
+	case Black:
+		return "Black"
+	case White:
+		return "White"
+	default:
+		return ""
+	}
+}
+
 func (p Player) DrawAllPieces() []*Piece {
 	player := strconv.Itoa(int(p))
 	ps := make([]*Piece, 25)

@@ -5,7 +5,7 @@ import (
 )
 
 type User struct {
-	Id string
-	chess.Player
+	Id     string
+	Player chess.Player
 	//Server *server.Server
 }

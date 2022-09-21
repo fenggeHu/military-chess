@@ -9,7 +9,7 @@ import (
 
 func TestServer(t *testing.T) {
 	s := &Server{}
-	s.RandomGame()
+	s.TwoPlayerGame()
 
 	msg := &user.Message{
 		Action: user.Ready,
