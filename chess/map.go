@@ -1,4 +1,4 @@
-package server
+package chess
 
 type RoadType int
 

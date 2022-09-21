@@ -1,8 +1,7 @@
-package action
+package user
 
 import (
-	"military-chess/client"
-	"military-chess/server"
+	"military-chess/chess"
 )
 
 type Type int
@@ -15,14 +14,14 @@ const (
 )
 
 type MovingData struct {
-	Piece *server.Piece
-	From  *server.Point
-	To    *server.Point
+	Piece *chess.Piece
+	From  *chess.Point
+	To    *chess.Point
 }
 
 // 通讯
 type Message struct {
-	*client.User
+	*User
 	Action Type
 	Data   interface{}
 }

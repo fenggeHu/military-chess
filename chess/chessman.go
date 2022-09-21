@@ -1,4 +1,4 @@
-package server
+package chess
 
 import "strconv"
 
@@ -26,6 +26,13 @@ func (c Commander) Id() string {
 
 func (c Commander) Value() int {
 	return int(c)
+}
+
+type Piece struct {
+	Commander
+	Player
+	uid string // unique id
+	*Point
 }
 
 type Movable int

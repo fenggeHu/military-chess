@@ -1,6 +1,8 @@
-package server
+package chess
 
-import "strconv"
+import (
+	"strconv"
+)
 
 // 玩家
 type Player int
@@ -10,18 +12,12 @@ const (
 	White Player = iota // 观众
 	Red
 	Black
-	Orange
-	Purple
-	Green
-	Blue
+	// 待扩展
+	//Orange
+	//Purple
+	//Green
+	//Blue
 )
-
-type Piece struct {
-	Commander
-	Player
-	uid string // unique id
-	*Point
-}
 
 func (p Player) DrawAllPieces() []*Piece {
 	player := strconv.Itoa(int(p))

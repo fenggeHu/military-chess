@@ -1,4 +1,4 @@
-package server
+package chess
 
 import (
 	"fmt"

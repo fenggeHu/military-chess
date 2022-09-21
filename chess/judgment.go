@@ -1,6 +1,8 @@
-package server
+package chess
 
-import "errors"
+import (
+	"errors"
+)
 
 // 判定结果
 type Verdict int

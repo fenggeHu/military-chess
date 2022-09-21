@@ -2,11 +2,11 @@ package client
 
 import (
 	"github.com/gorilla/websocket"
-	"military-chess/action"
+	"military-chess/user"
 )
 
 type Client struct {
 	ID      string
 	Socket  *websocket.Conn
-	Message chan *action.Message
+	Message chan *user.Message
 }
