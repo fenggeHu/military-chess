@@ -7,7 +7,7 @@ type Player int
 
 // 红黑对战，四国：橙色、紫色、绿色、蓝色 - 橙绿、紫蓝分别一对
 const (
-	White Player = iota // no group
+	White Player = iota // 观众
 	Red
 	Black
 	Orange

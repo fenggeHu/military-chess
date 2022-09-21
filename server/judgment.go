@@ -14,7 +14,7 @@ const (
 // 移动
 
 // 相遇判定
-func (p Piece) Meet(e *Piece) (ver Verdict, err error) {
+func (p *Piece) Meet(e *Piece) (ver Verdict, err error) {
 	if p.Commander == Flag || p.Commander == Mine {
 		err = errors.New("non movable")
 		return
