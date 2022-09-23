@@ -154,6 +154,86 @@ type IGraph interface {
 	HasEdge(e *Edge) bool
 	//
 	HasNode(n *Node) bool
+	//
+	GetNode(id string) *Node
+	// 合并
+	Combine(g2 *Graph) *Graph
 	// all paths of two nodes
-	Paths(a, b *Node) []list.List
+	Paths(a, b *Node) []*list.List
+}
+
+func (g *Graph) AddEdgeNodes(a, b *Node, weight int) bool {
+	if a == b {
+		return false
+	}
+	edge := NewEdge(a, b, weight)
+	return g.AddEdge(edge)
+}
+
+func (g *Graph) AddEdge(e *Edge) bool {
+	if g.HasEdge(e) {
+		return false
+	} else {
+		g.Edges = append(g.Edges, e)
+		return true
+	}
+}
+
+func (g *Graph) AddNode(n *Node) bool {
+	if g.HasNode(n) {
+		return false
+	} else {
+		g.Nodes = append(g.Nodes, n)
+		return true
+	}
+}
+func (g *Graph) HasEdge(e *Edge) bool {
+	for _, d := range g.Edges {
+		if d == e {
+			return true
+		}
+	}
+	return false
+}
+
+func (g *Graph) HasNode(n *Node) bool {
+	for _, d := range g.Nodes {
+		if d == n {
+			return true
+		}
+	}
+	return false
+}
+
+func (g *Graph) GetNode(id string) *Node {
+	for _, v := range g.Nodes {
+		if v.Id == id {
+			return v
+		}
+	}
+	return nil
+}
+
+func (g *Graph) Combine(g2 *Graph) *Graph {
+	nodes := make([]*Node, 0)
+	for _, v := range g.Nodes {
+		nodes = append(nodes, v)
+	}
+	for _, v := range g2.Nodes {
+		nodes = append(nodes, v)
+	}
+	edges := make([]*Edge, 0)
+	for _, v := range g.Edges {
+		edges = append(edges, v)
+	}
+	for _, v := range g2.Edges {
+		edges = append(edges, v)
+	}
+
+	// all edges in graph
+	return &Graph{nodes, edges}
+}
+func (g *Graph) Paths(a, b *Node) []*list.List {
+
+	return nil
 }

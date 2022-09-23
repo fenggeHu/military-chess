@@ -15,4 +15,7 @@ func TestMap(t *testing.T) {
 		Player:    Black,
 	}
 	fmt.Println(red)
+
+	a := m
+
 }
