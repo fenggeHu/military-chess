@@ -143,6 +143,16 @@ type Graph struct {
 	Edges []*Edge
 }
 
+func NewGraph(nodes []*Node, edges []*Edge) *Graph {
+	if nodes == nil {
+		nodes = make([]*Node, 0)
+	}
+	if edges == nil {
+		edges = make([]*Edge, 0)
+	}
+	return &Graph{nodes, edges}
+}
+
 type IGraph interface {
 	// add edge & nodes
 	AddEdgeNodes(a, b *Node, weight int) bool
@@ -175,6 +185,9 @@ func (g *Graph) AddEdge(e *Edge) bool {
 		return false
 	} else {
 		g.Edges = append(g.Edges, e)
+		//
+		g.AddNode(e.nodes[0])
+		g.AddNode(e.nodes[1])
 		return true
 	}
 }

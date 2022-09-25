@@ -106,7 +106,7 @@ func DrawATerritory(p Player) *graph.Graph {
 	land[4] = line(p, 4)
 	land[5] = line(p, 5)
 
-	return &Territory{Points: land}
+	return nil
 }
 
 // define a line
@@ -121,13 +121,13 @@ func line(p Player, x int) [5]Point {
 
 // draw a map for players
 func DrawAMap(players ...Player) *Map {
-	t := make(map[Player]*Territory)
-	for _, p := range players {
-		ter := DrawATerritory(p)
-		ter.Index = int(p)
-		t[p] = ter
-	}
-	m := &Map{}
-
-	return m
+	//t := make(map[Player]*Territory)
+	//for _, p := range players {
+	//	ter := DrawATerritory(p)
+	//	ter.Index = int(p)
+	//	t[p] = ter
+	//}
+	//m := &Map{}
+	//
+	return nil
 }
